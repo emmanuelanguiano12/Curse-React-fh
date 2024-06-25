@@ -6,7 +6,7 @@ export const SecondApp = ({ title, subtitle, name }) => {
 
   return (
     <>
-        <h1>{ title }</h1>
+        <h1 data-testid="test-title">{ title }</h1>
         {/* <code>{ JSON.stringify(newMessage) }</code> */}
         <p>{subtitle}</p>
         <p>{name}</p>
@@ -21,7 +21,7 @@ SecondApp.propTypes = {
 }
 
 SecondApp.defaultProps = {
-  title: 'No hay titulo',
+  // title: 'No hay titulo',
   subtitle: "No hay subtitulo",
   name: "Emmanuel"
 }
