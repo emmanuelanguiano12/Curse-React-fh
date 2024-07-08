@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from "react-router"
-import queryString from 'query-string'
 import { useForm } from "../../hooks/useForm"
 import { HeroeCard } from "../components/HeroeCard"
 import { getHeroesByName } from "../helpers/getHeroesByName"
+import queryString from "query-string"
 
 export const SearchHeroe = () => {
 
@@ -72,7 +72,7 @@ export const SearchHeroe = () => {
           </div>
           
           <div className="alert alert-danger animate__animated animate__fadeIn" style={{display: showError ? '' : 'none'}}>
-            <b>No hero founded with parameter: <b>{q}</b></b>
+            <b>No hero with parameter: <b>{q}</b></b>
           </div>
 
           {
