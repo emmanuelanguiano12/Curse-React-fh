@@ -5,7 +5,7 @@ const drowerWidth = 240;
 
 export const JournalLayout = ({children}) => {
   return (
-    <Box sx={{display: 'flex'}}>
+    <Box sx={{display: 'flex'}} className="animate__animated animate_fadeIn animate__faster">
 
       <Navbar drowerWidth={drowerWidth} />
 

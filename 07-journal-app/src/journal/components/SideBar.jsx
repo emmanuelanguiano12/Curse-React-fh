@@ -1,14 +1,18 @@
 import { TurnedInNot } from '@mui/icons-material'
 import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 export const SideBar = ({drowerWidth}) => {
+
+    const { displayName } = useSelector(state => state.auth)
+    
   return (
     <Box component='nav' sx={{ width: {sm: drowerWidth}, flexShrink: {sm: 0} }}>
         <Drawer variant='permanent' open sx={{ display: {xs: 'block'}, '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drowerWidth} }}> 
             <Toolbar>
                 <Typography variant='h6' noWrap component='div'>
-                    Emmanuel Anguiano
+                    { displayName }
                 </Typography>
             </Toolbar>
             <Divider />
@@ -23,7 +27,7 @@ export const SideBar = ({drowerWidth}) => {
                                 </ListItemIcon>
                                 <Grid container>
                                     <ListItemText primary={text} />
-                                    <ListItemText secondary='Emmanuel Anguiano Pedraza' />
+                                    <ListItemText secondary='Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...' />
                                 </Grid>
                             </ListItemButton>
                         </ListItem>
