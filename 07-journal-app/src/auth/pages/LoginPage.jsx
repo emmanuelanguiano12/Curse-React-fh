@@ -5,7 +5,12 @@ import React, { useMemo } from "react";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch, useSelector } from "react-redux";
-import { checkingAuthentication, startGoogleSignIn, startLoginWithEmailAndPassword } from "../../store/auth/thunks";
+import { startGoogleSignIn, startLoginWithEmailAndPassword } from "../../store/auth/thunks";
+
+const formData = {
+  email: '',
+  password: ''
+}
 
 export const LoginPage = () => {
 
@@ -13,10 +18,7 @@ export const LoginPage = () => {
 
   const dispatch = useDispatch()
 
-  const {email, password, onInputChange} = useForm({
-    email: '',
-    password: ''
-  })
+  const {email, password, onInputChange} = useForm(formData)
 
   const isAuthenticated = useMemo(() => status === 'checking', [status])
   

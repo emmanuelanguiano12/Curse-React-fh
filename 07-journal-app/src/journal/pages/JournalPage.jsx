@@ -3,16 +3,30 @@ import { JournalLayout } from "../layout/JournalLayout"
 import { NoteView } from "../views/NoteView"
 import { NothingSelectedView } from "../views/NothingSelectedView"
 import { AddOutlined } from "@mui/icons-material"
+import { useDispatch, useSelector } from "react-redux"
+import { startCheckingNote, startNewNote } from "../../store/journal/thunks"
 
 export const JournalPage = () => {
+
+  //mandar a llamar las propiedades que salen redux toolkit
+  const {isSaving, active: note} = useSelector(state => state.journal)
+
+  const dispatch = useDispatch()
+
+  const onClickNewNote = () => {  
+    dispatch( startNewNote() )
+  }
+
   return (
     <JournalLayout>
-      {/* <Typography>Sunt quis laboris mollit esse magna do incididunt.</Typography> Children de JournalLayout */}
 
-      <NothingSelectedView />
-      {/* <NoteView /> */}
+      {
+        !!note ? <NoteView /> :<NothingSelectedView /> // !! convierte a booleano
+      }
 
       <IconButton
+        disabled={isSaving}
+        onClick={onClickNewNote}
         size="large"
         sx={{ 
           color: 'white',

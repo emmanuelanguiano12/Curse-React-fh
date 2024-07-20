@@ -11,6 +11,13 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
 
     }, [formState]);
 
+    useEffect(() => {
+        
+        //Si el formulario inicial cambia, se vuelve a llamar
+        setFormState(initialForm)
+
+    }, [initialForm]);
+
     const isFormValid = useMemo(() => {
 
         for (const formValue of Object.keys(formValidation)) { //barrer todas las opciones que tiene el formValidation
