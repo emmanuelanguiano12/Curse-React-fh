@@ -19,6 +19,7 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/auth')); //? todo lo que sea de este archivo se habilita en esa ruta
 
 //TODO: CRUD eventos
+app.use('/api/events', require('./routes/events')); //? todo lo que sea de este archivo se habilita en esa ruta
 
 //Directorio publico
 app.use(express.static('public'));
