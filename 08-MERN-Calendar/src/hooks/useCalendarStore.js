@@ -44,9 +44,9 @@ export const useCalendarStore = () => {
             Swal.fire('Evento eliminado', '', 'warning')
         } catch (error) {
             console.log(error)
-            Swal.fire('Error al guardar', error.response.data?.msg, 'error')
+            Swal.fire('Error al eliminar', error.response.data?.msg, 'error')
         }
-        
+
     }
 
     const startLoadingEvents = async() => {
