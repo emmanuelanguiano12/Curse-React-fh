@@ -78,7 +78,6 @@ export const CalendarModal = () => {
 
     //Mandar los valores para la creacion de un evento
     await startSavingEvent(formValues);
-    Swal.fire('Evento actualizado', '', 'success')
     closeDateModal();
     setFormSubmited(false)
 
